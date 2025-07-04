@@ -1,8 +1,8 @@
-package online.afeibaili;
+package online;
 
-import online.afeibaili.map.Address;
-import online.afeibaili.map.Datacenter;
-import online.afeibaili.map.Package;
+import online.map.Address;
+import online.map.Datacenter;
+import online.map.Package;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-import static online.afeibaili.Main.JSON;
+import static online.Main.JSON;
 
 public class Client {
     public Client(int roomId, String cookie) throws URISyntaxException, IOException, InterruptedException {

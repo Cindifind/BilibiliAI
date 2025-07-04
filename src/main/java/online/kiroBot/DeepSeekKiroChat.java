@@ -1,4 +1,4 @@
-package online.afeibaili.kiroBot;
+package online.kiroBot;
 
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
@@ -9,16 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class GPTKiroChat {
-
-    private static final String API_KEY = "sk-6Yhbv9TzAYmGhYjL8FXNBfJHv8S0q3IJN2Istz22EIKO2xfA";
-    private static final String BASE_URL = "https://api.chatanywhere.tech/v1";
+public class DeepSeekKiroChat {
     private static final Logger logger = Logger.getLogger(GPTKiroChat.class.getName());
+    private static final String API_KEY = "sk-mkgdltfgwnpetbuvrpnszqepevcxpusoghylastsmnrxkqvy";
+    private static final String BASE_URL = "https://api.siliconflow.cn";
 
 
 
-
-    public static String gpt35Api(List<JSONObject> messages,String character) {
+    public static String DeepSeekApi(List<JSONObject> messages, String character) {
         String systemMessage = Same.getKiroCharacter(character);
         //加入character
         if (systemMessage == null) {
@@ -31,26 +29,27 @@ public class GPTKiroChat {
         List<Object> mutableMessages = new ArrayList<>(messages);
         mutableMessages.add(messageJson);
         JSONObject requestBody = new JSONObject();
-        requestBody.put("model", "gpt-4o-mini");
+        requestBody.put("model", "deepseek-ai/DeepSeek-V3");
+        requestBody.put("max_token",512);
         requestBody.put("messages", new JSONArray(mutableMessages));
-        HttpResponse<String> response = Unirest.post(BASE_URL + "/chat/completions")
+        HttpResponse<String> response = Unirest.post(BASE_URL + "/v1/chat/completions")
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + API_KEY)
                 .body(requestBody.toString())
                 .asString();
         JSONObject object = new JSONObject(response.getBody());
-        logger.info("GPT");
+        logger.info("DeepSeek");
+        logger.info(object.toString());
         return object
                 .getJSONArray("choices")
                 .getJSONObject(0)
                 .getJSONObject("message")
                 .getString("content");
     }
-
     public static void messages(List<JSONObject> messages, String character) {
         JSONObject responseObject = new JSONObject()
                 .put("role", "assistant")
-                .put("content", gpt35Api(messages,character));
+                .put("content", DeepSeekApi(messages,character));
         messages.add(responseObject);
     }
 }

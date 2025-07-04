@@ -1,4 +1,4 @@
-package online.afeibaili;
+package online;
 
 import java.io.IOException;
 import java.net.URI;

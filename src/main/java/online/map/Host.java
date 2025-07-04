@@ -1,4 +1,4 @@
-package online.afeibaili.map;
+package online.map;
 
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonProperty;

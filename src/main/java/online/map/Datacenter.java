@@ -1,4 +1,4 @@
-package online.afeibaili.map;
+package online.map;
 
 import java.util.HashMap;
 import java.util.Map;

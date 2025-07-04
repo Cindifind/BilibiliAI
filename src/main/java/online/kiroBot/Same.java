@@ -1,4 +1,4 @@
-package online.afeibaili.kiroBot;
+package online.kiroBot;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -71,7 +71,7 @@ public class Same {
         }
         messages.add(new JSONObject()
                 .put("role", "user")
-                .put("content", UserMessage));
+                .put("content", UserMessage+"（不需要加任何表情以及动作描写）"));
         //用户输入信息
         switch (choice)
             {
