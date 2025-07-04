@@ -1,5 +1,6 @@
 package online;
 
+import client.tool.BiliBiliTool;
 import online.map.Address;
 import online.map.Datacenter;
 import online.map.Package;
@@ -14,7 +15,7 @@ import static online.Main.JSON;
 
 public class Client {
     public Client(int roomId, String cookie) throws URISyntaxException, IOException, InterruptedException {
-        String url = "https://api.live.bilibili.com/xlive/web-room/v1/index/getDanmuInfo?id=" + roomId + "&type=0";
+        String url = BiliBiliTool.buildDanmuInfoUrl(roomId);
        //使用Util.getRoomAddressJson()方法获取地址，并使用readValue方法将JSON转成Address对象
         Address address = JSON.readValue(Util.getRoomAddressJson(url, roomId, cookie), Address.class);
         //获取地址主要信息

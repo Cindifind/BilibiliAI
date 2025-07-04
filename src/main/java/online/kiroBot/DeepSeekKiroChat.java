@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class DeepSeekKiroChat {
-    private static final Logger logger = Logger.getLogger(GPTKiroChat.class.getName());
-    private static final String API_KEY = "sk-mkgdltfgwnpetbuvrpnszqepevcxpusoghylastsmnrxkqvy";
+    private static final Logger logger = Logger.getLogger(DeepSeekKiroChat.class.getName());
+    private static final String API_KEY = "";
     private static final String BASE_URL = "https://api.siliconflow.cn";
 
 
