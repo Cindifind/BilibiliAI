@@ -1,0 +1,12 @@
+{
+  "GPT": {
+    "URL": "https://api.chatanywhere.tech/v1",
+    "API_KEY": "sk-6Yhbv9TzAYmGhYjL8FXNBfJHv8S0q3IJN2Istz22EIKO2xfA"
+  },
+  "DeepSeek": {
+    "URL": "https://api.siliconflow.cn",
+    "API_KEY": "sk-mkgdltfgwnpetbuvrpnszqepevcxpusoghylastsmnrxkqvy",
+    "Elysia": "speech:Elysia:sbdn8crxf9:mststxysjyefjprcoino",
+    "Furina": "speech:Furina:sbdn8crxf9:bxcinedegttdfrzvizzb"
+  }
+}
