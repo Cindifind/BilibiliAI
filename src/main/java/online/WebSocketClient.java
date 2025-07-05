@@ -177,7 +177,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
                 voice("唱歌", "Elysia");
                 return;
             }
-            String ElysiaVoice = Same.getMessage(message, 2, "Elysia");
+            String ElysiaVoice = Same.getMessage(message, 2, "Elysia",false);
             File file;
             try {
                 file = Voice.generateVoiceFile(ElysiaVoice, "Elysia");
@@ -202,7 +202,7 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
         }
         System.out.println("弹幕消息：" + message);
         if (message.equals("讲一个小故事")) {
-            String ElysiaVoice = Same.getMessage(message, 2, "Elysia");
+            String ElysiaVoice = Same.getMessage(message, 2, "Elysia",false);
             File file;
             try {
                 file = Voice.generateVoiceFile(ElysiaVoice, "Elysia");

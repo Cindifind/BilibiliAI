@@ -9,15 +9,23 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static online.kiroBot.DeepSeekKiroChat.apiJson;
+
+
 public class Voice {
     private static final String API_KEY = "sk-mkgdltfgwnpetbuvrpnszqepevcxpusoghylastsmnrxkqvy";
     private static final String BASE_URL = "https://api.siliconflow.cn/v1";
     private static final String Elysia = "speech:Elysia:sbdn8crxf9:mststxysjyefjprcoino";
     private static final String Furina = "speech:Furina:sbdn8crxf9:bxcinedegttdfrzvizzb";
     public static File generateVoiceFile(String text, String character) throws IOException {
+//        JSONObject deepSeek = apiJson.getJSONObject("DeepSeek");
+//        String API_KEY = deepSeek.getString("API_KEY");
+//        String BASE_URL = deepSeek.getString("URL");
+//        String Furina = deepSeek .getString("Furina");
+//        String Elysia = deepSeek .getString("Elysia");
         String model = character.equals("Elysia")?Elysia:Furina;
         // 创建临时文件路径
-        Path speechPath = Paths.get("siliconcloud-generated-speech.mp3");
+        Path speechPath = Paths.get("1.mp3");
         File outputFile = speechPath.toFile();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("model", "FunAudioLLM/CosyVoice2-0.5B");
